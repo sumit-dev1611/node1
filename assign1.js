@@ -20,6 +20,7 @@
         collection: 'UsersProfile'
     });
     var user = conn.model('user', user_schema);
+
     var userprofile = conn.model('userprofile', userprofile_schema);
     var userdetail = [
         { firstname: 'John', lastname: 'cena', email: 'john8798@gmail.com', password: 'hfgh999', dob: '06/12/1912', Mobile_no: 365154366 },
