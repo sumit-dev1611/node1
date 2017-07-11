@@ -14,7 +14,6 @@
             }
             if (data) {
                 var birthDate = new Date(data.dob);
-                console.log(birthDate);
                 var age = today.getFullYear() - birthDate.getFullYear();
                 console.log("Age is " + age + " years");
                 sum = sum + age;
