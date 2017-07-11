@@ -22,8 +22,9 @@
                 sum = sum + age;
                 count++;
                 if (age >= 25) {
+                    console.log("More than 25 years")
                     db.collection('UsersProfile').remove({ "_id": data._id }, function(err, result) {
-                        if (result === 1) { console.log('error: ' + err) } else { console.log('Deleted') };
+                        if (result === 1) { console.log('error: ' + err) } else { console.log('Data Deleted') };
                     });
                 }
                 avg = sum / count;
