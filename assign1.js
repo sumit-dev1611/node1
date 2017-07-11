@@ -41,7 +41,6 @@
             new_data.save(function(err, data1) {
                 if (err) {
                     console.log(err);
-                    process.exit();
                 } else if (data1) {
                     var new_data1 = new userprofile({
                         User_id: data1._id,
@@ -52,9 +51,7 @@
                     new_data1.save(function(err, data) {
                         if (err) {
                             console.log(err);
-                            process.exit();
                         }
-
                     });
                 }
                 callback();
