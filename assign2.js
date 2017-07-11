@@ -1,6 +1,6 @@
     var MongoClient = require('mongodb').MongoClient;
     var avg = 0;
-    MongoClient.connect('mongodb://admin:123@ds151232.mlab.com:51232/sumit', function(err, db) {
+    MongoClient.connect('mongodb://admin:123@ds151232.mlab.com:51232/sumit', function(err, db, callback) {
         if (err) {
             console.log(err);
         }
@@ -8,9 +8,7 @@
         var today = new Date();
         var sum = 0,
             count = 0;
-        var parser = db.collection('UsersProfile').find();
-
-        parser.each(function(err, data) {
+        db.collection('UsersProfile').find().each(function(err, data) {
             if (err) {
                 console.log(err);
             }
@@ -32,5 +30,6 @@
                 console.log("Average age of users is" + avg);
             }
         });
-
+        if (callback)
+            callback();
     });
